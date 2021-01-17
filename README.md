@@ -112,8 +112,8 @@ public class TableEnum {
         
         
         
-        
- <font color=orange>本项目启动类为 MybatisGenerator.java </font>      
+       
+ ## 本项目启动类为 MybatisGenerator.java
 
 
 

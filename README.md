@@ -110,7 +110,10 @@ public class TableEnum {
         
         templateConfig.setEnumName(null);  
         
- ### 本项目启动类为 **MybatisGenerator**       
+        
+        
+        
+ <font color=orange>本项目启动类为 MybatisGenerator.java </font>      
 
 
 

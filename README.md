@@ -110,7 +110,7 @@ public class TableEnum {
         
         templateConfig.setEnumName(null);  
         
- 本项目启动类为 **MybatisGenerator**       
+ ### 本项目启动类为 **MybatisGenerator**       
 
 
 

@@ -689,14 +689,16 @@ public class ConfigBuilder {
      */
     private TableEnum getTableEnum(String fieldType, String columnName, String fieldComment) {
         TableEnum tableEnum = new TableEnum();
-        if ("tinyint".equals(fieldType) && accordCommentFormat(fieldComment)) {
+        if (fieldType.contains("tinyint") && accordCommentFormat(fieldComment)) {
             try {
-                int firstColonIndex = fieldComment.indexOf("：");
-                fieldComment = fieldComment.substring(firstColonIndex + 1);
+                fieldComment = fieldComment.trim();
+                int firstColonIndex = fieldComment.indexOf("{");
+                fieldComment = fieldComment.substring(firstColonIndex);
                 fieldComment = fieldComment.substring(1).substring(0, fieldComment.length() - 2);
                 String[] fields = fieldComment.split("，");
                 List<EnumField> enumFields = new ArrayList<>();
                 for (String field : fields) {
+                    field = field.trim();
                     String[] keyValues = field.split("：");
                     EnumField enumField = new EnumField();
                     enumField.setKey(keyValues[0].trim());
@@ -708,7 +710,7 @@ public class ConfigBuilder {
                 String enumName = NamingStrategy.underlineToCamel(columnName);
                 tableEnum.setName( NamingStrategy.capitalFirst(enumName) + "Enum");
             } catch (Exception e) {
-                log.error("字段名{}解析成枚举时出错", columnName);
+                log.error("字段名{}解析成枚举时出错", columnName, e);
             } finally {
                 return tableEnum;
             }

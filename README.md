@@ -124,5 +124,5 @@ public class TableEnum {
 
 ## 反馈与建议
 - 作者：zjh
-- 邮箱：<zhujinghuic@qq.com>
+- 邮箱：<zhujinghuic@163.com>
 - QQ  : 375506762
